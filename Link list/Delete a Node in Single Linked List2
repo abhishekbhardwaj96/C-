@@ -1,0 +1,24 @@
+struct Node
+{
+    int data;
+    Node* next;
+};*/
+/*You are required to complete below method*/
+Node* deleteNode(Node *head,int x)
+{
+    //Your code here
+    Node *node=new Node;
+    node = head;
+    if(x==1 && head!= NULL){
+        head = head->next;
+    }
+    else{
+        while(x > 2 && node->next!=NULL){
+        node = node->next;
+        x--;
+        }
+        node->next=node->next->next;
+        
+    }
+    return head;
+}
