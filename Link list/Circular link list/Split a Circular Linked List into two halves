@@ -1,0 +1,37 @@
+
+/*Please note that it's Function problem i.e.
+you need to write your solution in the form of Function(s) only.
+Driver Code to call/invoke your function is mentioned above.*/
+
+/* The structure of linked list is the following
+struct Node
+{
+   int data;
+   Node* next;
+};   */
+//  function which splits the circular linked list.  head is pointer
+// to head Node of given lined list.  head1_ref1 and *head_ref2
+// are pointers to head pointers of resultant two halves.
+void splitList(Node *head, Node **head1_ref, Node **head2_ref)
+{
+    // your code goes here
+    Node *fast = head;
+    Node *slow = head;
+    if(head == NULL){
+        return ;
+    }
+    while(fast->next!=head && fast->next->next!=head){
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+    *head1_ref = head;
+    if(head->next!=head){
+        *head2_ref = slow->next;
+    }
+    if(fast->next->next == head){
+        fast = fast->next;
+    }
+    fast->next = slow->next;
+    slow->next = head;
+    
+}
