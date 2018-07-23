@@ -1,0 +1,42 @@
+/*Please note that it's Function problem i.e.
+you need to write your solution in the form of Function(s) only.
+Driver Code to call/invoke your function is mentioned above.*/
+
+/* structure for a node */
+/*
+struct Node
+{
+  int data;
+  Node *next;
+};
+ */
+void sortedInsert(Node** head_ref, int x)
+{
+   //Your code here
+    Node *node = new Node;
+    node->next = NULL;
+    node->data = x;
+    Node *temp = *head_ref;
+    if(head_ref!=NULL){
+        if(temp->data > x){
+            while(temp->next!=*head_ref){
+                temp = temp->next;
+            }
+            node->next = temp->next;
+            temp->next = node;
+            *head_ref = node;
+        }
+        else{
+            while (temp->next!= *head_ref && temp->next->data < x){
+                temp = temp->next;
+            }
+            node->next = temp->next;
+            temp->next = node;
+        }
+            
+        }
+    else{
+        *head_ref = node;
+    }
+    
+}
