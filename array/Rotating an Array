@@ -1,0 +1,34 @@
+using namespace std;
+void reverse(int arr[],int start,int end){
+    while(start < end){
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
+    }
+}
+
+int main()
+ {
+	//code
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size,rotation;
+	    cin>>size;
+	    int arr[size];
+	    for(int i=0;i<size;i++){
+	        cin>>arr[i];
+	    }
+	    cin>>rotation;
+        reverse(arr,0,rotation-1);
+        reverse(arr,rotation,size-1);
+        reverse(arr,0,size-1);
+        for(int i=0; i<size; i++){
+            cout<<arr[i]<<" ";
+        }
+        cout<<"\n";
+	}
+	return 0;
+}
