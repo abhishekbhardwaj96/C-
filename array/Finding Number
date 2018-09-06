@@ -1,0 +1,28 @@
+using namespace std;
+int main()
+ {
+	//
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int search,size,fg=0;
+	    cin>>size>>search;
+	    int arr[size];
+	    for(int i=0;i<size;i++){
+	        cin>>arr[i];
+	    }
+	    for(int i=0;i<size;i++){
+	        if(arr[i] == search){
+	            fg=1;
+	            cout<<i;
+	            break;
+	        }
+	    }
+	    if(fg==0){
+	        cout<<"OOPS! NOT FOUND";
+	    }
+	    cout<<"\n";
+	}
+	
+	return 0;
+}
