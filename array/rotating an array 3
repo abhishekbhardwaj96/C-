@@ -1,0 +1,30 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main()
+ {  
+    int test;
+    cin>>test;
+    for(int i=0;i<test;i++){
+    	vector<int> vec;
+        int size,temp;
+        cin>>size;
+        for(int i=0;i<size;i++){
+            cin>>temp;
+            vec.push_back(temp);
+        }
+        int rot;
+        cin>>rot;
+        for(int i=0;i<rot;i++){
+            temp = vec.front();
+            vec.erase(vec.begin());
+            vec.push_back(temp);
+        }
+        for(auto it = vec.begin();it!=vec.end();it++){
+            cout<<*it<<" ";
+        }
+        cout<<"\n";
+    }
+	return 0;
+}
