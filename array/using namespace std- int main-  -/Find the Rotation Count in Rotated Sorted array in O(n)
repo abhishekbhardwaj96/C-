@@ -1,0 +1,26 @@
+using namespace std;
+int main()
+ {
+	//code
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    int min = arr[0],index=0;
+	    for(int i=1;i<size;i++){
+	        if(min >= arr[i]){
+	            if(arr[i-1]>arr[i]){
+    	            min = arr[i];
+    	            index = i;
+	            }
+	        }
+	    }
+	    cout<<index<<"\n";
+	}
+	return 0;
+}
