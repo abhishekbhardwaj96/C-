@@ -1,0 +1,36 @@
+using namespace std;
+int rotation(int arr[],int size){
+    int beg =0,high=size-1;
+    int mid;
+    while(beg<high){
+    mid = (beg+high)/2;
+    if (mid < high && arr[mid+1] < arr[mid]) 
+       return (mid+1); 
+  
+    // Check if mid itself is minimum element 
+    if (mid > beg && arr[mid] < arr[mid - 1]) 
+       return mid; 
+       
+    else if(arr[high] > arr[mid]){
+        high = mid-1;
+    }
+    else{
+        beg = mid+1;
+    }
+    }
+}
+int main()
+ {
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    cout<<rotation(arr,size)<<"\n";
+	}
+	return 0;
+}
