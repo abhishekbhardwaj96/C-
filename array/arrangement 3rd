@@ -1,0 +1,38 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+void print(int arr[],int size){
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
+    
+}
+
+void rotate(int arr[],int size){
+    int temp = arr[0];
+    for(int i=0;i<size-1;i++){
+        arr[i] = arr[i+1];
+    }
+    arr[size-1] = temp;
+}
+int main(){
+    int size;
+    cin>>size;
+    int arr[size];
+    for(int i=0;i<size;i++){
+        cin>>arr[i];
+    }
+    sort(arr,arr+size);
+    
+    int even = size/2;
+    int odd = size-even;
+    
+    for(int i=size;i>0;i--){
+        if(i%2 != 0){
+            rotate(arr,i);
+        }
+    }
+    
+    print(arr,size);
+    return 0;
+}
