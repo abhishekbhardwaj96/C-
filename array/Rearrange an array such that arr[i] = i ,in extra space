@@ -1,0 +1,30 @@
+using namespace std;
+void place_element(int arr[],int brr[],int size){
+    for(int i=0;i<size;i++){
+        brr[i] = -1;
+    }
+    for(int i=0;i<size;i++){
+        if(arr[i]!=-1){
+            brr[arr[i]] = arr[i];
+        }
+    }
+}
+int main()
+ {
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size],brr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    place_element(arr,brr,size);
+	    for(int j=0;j<size;j++){
+	        cout<<brr[j]<<" ";
+	    }
+	    cout<<"\n";
+	}
+	return 0;
+}
