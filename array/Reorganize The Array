@@ -1,0 +1,38 @@
+using namespace std;
+
+int main()
+ {
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    for(int i=0;i<size;i++){
+	        if(arr[i]!=-1 && arr[i]!=i){
+	            int x = arr[i];
+                int y;
+                while(arr[x]!=-1 && arr[x]!=x){
+                    int y = arr[x];
+                    arr[x] = x;
+                    x = y;
+                }
+	            arr[x] = x;
+	        }
+	        if(arr[i]!=i){
+	            arr[i]=-1;
+	        }
+	            
+	    }
+	    
+	    
+	    for(int j=0;j<size;j++){
+	        cout<<arr[j]<<" ";
+	    }
+	    cout<<"\n";
+	}
+	return 0;
+}
