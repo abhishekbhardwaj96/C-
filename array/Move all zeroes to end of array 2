@@ -1,0 +1,28 @@
+using namespace std;
+int main()
+ {
+	//code
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size,count=0;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    for(int j=0;j<size;j++){
+	        if(arr[j]!=0){
+	            arr[count++] = arr[j];
+	        }
+	        if(count-1!=j){
+	            arr[j]=0;
+	        }
+	    }
+	    for(int i=0;i<size;i++){
+	        cout<<arr[i]<<" ";
+	    }
+	    cout<<"\n";
+	}
+	return 0;
+}
