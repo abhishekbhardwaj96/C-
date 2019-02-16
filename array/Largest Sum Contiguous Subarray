@@ -1,0 +1,29 @@
+#include<limits.h>
+using namespace std;
+int main()
+ {
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    int max =INT_MIN,temp=0;
+	    for(int i=0;i<size;i++){
+
+            temp += arr[i];
+            if(max<temp){
+                max = temp;
+            }
+            if(temp < 0){
+                temp =0;
+            }
+	    }
+	    
+	    cout<<max<<"\n";
+	}
+	return 0;
+}
