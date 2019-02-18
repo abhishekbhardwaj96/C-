@@ -1,0 +1,27 @@
+using namespace std;
+int main()
+ {
+	int test;
+	cin>>test;
+	for(int i=0;i<test;i++){
+	    int size;
+	    cin>>size;
+	    int arr[size];
+	    for(int j=0;j<size;j++){
+	        cin>>arr[j];
+	    }
+	    int max =arr[0],temp=0;
+	    for(int i=0;i<size;i++){
+	        temp = 0;
+	        for(int j=i;j<size;j++){
+	            temp += arr[j];
+	            if(max < temp){
+	                max = temp;
+	            }
+	        }
+	    }
+	    
+	    cout<<max<<"\n";
+	}
+	return 0;
+}
