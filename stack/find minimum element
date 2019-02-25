@@ -1,0 +1,35 @@
+stack<int> s1;
+/*Complete the function(s) below*/
+void push(int a)
+{
+    s.push(a);
+    if(s1.empty()){
+        s1.push(a);
+    }
+    else if(s1.top()>=a){
+        s1.push(a);
+    }
+}
+bool isFull(int n)
+{
+    if(s.size()==n){
+        return true;
+    }
+    return false;
+}
+bool isEmpty()
+{
+    return s.empty();
+}
+int pop()
+{
+    int temp = s.top();
+    s.pop();
+    if(s1.top()==temp)
+        s1.pop();
+    return temp;
+}
+int getMin()
+{
+   return s1.top();
+}
